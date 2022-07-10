@@ -16,3 +16,5 @@ chePluginRegistry:
   imagePullPolicy: Always
   memoryLimit: 256Mi
   memoryRequests: 16Mi
+  tls:
+    secretName: chePluginRegistry-tls

@@ -11,3 +11,11 @@ global:
   tls:
     enabled: true
     secretName: che-tls
+
+dashboard:
+  tls:
+    secretName: dashboard-tls
+
+metrics:
+  tls:
+    secretName: metrics-tls

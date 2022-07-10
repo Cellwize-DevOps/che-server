@@ -52,8 +52,8 @@ spec:
   tls:
   - hosts:
     - {{ template "devfileRegistryHost" . }}
-    {{- if .Values.global.tls.secretName }}
-    secretName: {{ .Values.global.tls.secretName }}
+    {{- if .Values.cheDevfileRegistry.tls.secretName }}
+    secretName: {{ .Values.cheDevfileRegistry.tls.secretName }}
     {{- end -}}
 {{- end -}}
 
