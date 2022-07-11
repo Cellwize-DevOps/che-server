@@ -30,8 +30,8 @@ spec:
   tls:
   - hosts:
     - {{ template "keycloakHost" . }}
-    {{- if .Values.keycloak.tls.secretName }}
-    secretName: {{ .Values.keycloak.tls.secretName }}
+    {{- if .Values.global.tls.secretName }}
+    secretName: {{ .Values.global.tls.secretName }}
     {{- end -}}
 {{- end }}
   rules:

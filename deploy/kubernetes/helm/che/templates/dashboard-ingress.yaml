@@ -32,8 +32,8 @@ spec:
   tls:
   - hosts:
     - {{ template "cheHost" . }}
-    {{- if .Values.dashboard.tls.secretName }}
-    secretName: {{ .Values.dashboard.tls.secretName }}
+    {{- if .Values.global.tls.secretName }}
+    secretName: {{ .Values.global.tls.secretName }}
     {{- end -}}
 {{- end }}
   rules:
