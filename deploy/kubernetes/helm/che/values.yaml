@@ -139,6 +139,7 @@ dashboard:
   ingressPath: /dashboard
   tls:
     secretName: dashboard-tls
+  host: che-dashboard.cellwize.azure
 
 cheDevfileRegistry:
   deploy: true
