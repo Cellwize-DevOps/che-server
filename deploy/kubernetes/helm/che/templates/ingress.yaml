@@ -28,14 +28,14 @@ spec:
 {{- if .Values.global.tls.enabled }}
   tls:
   - hosts:
-    - {{ template "cheHost" . }}
+    - {{ .Values.dashboard.host }}
     {{- if .Values.global.tls.secretName }}
     secretName: {{ .Values.global.tls.secretName }}
     {{- end -}}
 {{- end }}
   rules:
 {{- if ne .Values.global.serverStrategy "default-host" }}
-  - host: {{ template "cheHost" . }}
+  - host: {{ .Values.dashboard.host }}
     http:
 {{- else }}
   - http:
