@@ -137,6 +137,8 @@ dashboard:
   cpuRequest: 50m
   cpuLimit: 500m
   ingressPath: /dashboard
+  tls:
+    secretName: dashboard-tls
 
 cheDevfileRegistry:
   deploy: true
@@ -165,6 +167,10 @@ prometheus:
         static_configs:
         - targets:
           - che-host:8087
+
+metrics:
+  tls:
+    secretName: metrics-tls
 
 grafana:
   adminUser: admin
