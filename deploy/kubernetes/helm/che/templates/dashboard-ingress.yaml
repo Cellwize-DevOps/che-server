@@ -38,7 +38,7 @@ spec:
 {{- end }}
   rules:
 {{- if ne .Values.global.serverStrategy "default-host" }}
-  - host: {{ template "cheHost" . }}
+  - host: {{ .Values.dashboard.host }}
     http:
 {{- else }}
   - http:
