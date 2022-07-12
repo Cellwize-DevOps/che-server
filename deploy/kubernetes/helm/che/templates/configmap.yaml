@@ -73,7 +73,7 @@ data:
   CHE_INFRA_KUBERNETES_NAMESPACE: {{ .Values.global.cheWorkspacesNamespace | quote}}
   CHE_INFRA_KUBERNETES_NAMESPACE_DEFAULT: {{ .Values.global.cheWorkspacesNamespace | quote}}
   CHE_INFRA_KUBERNETES_SERVICE__ACCOUNT__NAME: {{ .Values.global.cheWorkspaceServiceAccount }}
-  CHE_INFRA_KUBERNETES_TRUST__CERTS: "false"
+  CHE_INFRA_KUBERNETES_TRUST__CERTS: "true"
   CHE_INFRA_KUBERNETES_PVC_STRATEGY: "{{ .Values.global.cheWorkspacesPVCStrategy }}"
   CHE_INFRA_KUBERNETES_PVC_QUANTITY: {{ .Values.global.pvcClaim }}
   CHE_INFRA_KUBERNETES_PVC_PRECREATE__SUBPATHS: "true"
