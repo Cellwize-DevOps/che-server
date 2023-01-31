@@ -59,3 +59,22 @@ spec:
           initialDelaySeconds: 3
           periodSeconds: 10
           timeoutSeconds: 3
+      tolerations:
+        - effect: NoSchedule
+          key: cellwize.com/son-worker
+          operator: Exists
+        - effect: NoExecute
+          key: node.kubernetes.io/not-ready
+          operator: Exists
+          tolerationSeconds: 300
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+          tolerationSeconds: 300
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: son-worker
+                    operator: Exists

@@ -65,3 +65,22 @@ spec:
           - configMapRef:
               name: che-devfile-registry
               optional: true
+      tolerations:
+        - effect: NoSchedule
+          key: cellwize.com/son-worker
+          operator: Exists
+        - effect: NoExecute
+          key: node.kubernetes.io/not-ready
+          operator: Exists
+          tolerationSeconds: 300
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+          tolerationSeconds: 300
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: son-worker
+                    operator: Exists
